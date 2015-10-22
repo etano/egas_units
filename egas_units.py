@@ -86,7 +86,7 @@ class Units:
         return self.ConvertLength(rs,self.ConvertEnergy(1.))
 
 def usage():
-    print "Usage: %s rs D pol theta N (units_type)" % os.path.basename(sys.argv[0])
+    print "Usage: %s rs D pol theta N (energy_units_type) (length_units_type)" % os.path.basename(sys.argv[0])
     sys.exit(2)
 
 def main(argv=None):
