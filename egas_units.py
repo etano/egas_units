@@ -47,19 +47,14 @@ class Units:
     def GetTF(self,rs,D,pol):
         """ Fermi temperature """
         if D == 3:
-            # Fermi Temp (see Martin pg 103 (only he uses atomic units))
-            if pol:
-                TF = 0.5*(9.*pi/2.)**(2./3.) / (rs**2)
-            else:
-                TF = 0.5*(9.*pi/4.)**(2./3.) / (rs**2)
+            TF = 0.5*(9.*pi/4.)**(2./3.) / (rs**2)
         elif D == 2:
-            if pol:
-                TF = 4./(rs**2)
-            else:
-                TF = 1./(rs**2)
+            TF = 1./(rs**2)
         else:
             print "ERROR: D must equal 2 or 3!"
             sys.exit()
+        if pol:
+            TF = TF * pow(2.,2./D)
         return self.ConvertEnergy(TF)
 
     def GetT(self,rs,D,pol,theta):
