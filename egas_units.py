@@ -33,7 +33,7 @@ class Units:
         elif self.energy_units_type == 1:
             return 2.*E
         elif self.energy_units_type == 2:
-            return 315775.13*E
+            return 315775.13*E # Source: 2014 CODATA
 
     def ConvertLength(self,rs,L):
         """ Input is length in atomic units """
@@ -42,7 +42,7 @@ class Units:
         elif self.length_units_type == 1:
             return L/rs
         elif self.length_units_type == 2:
-            return L/0.52917721092
+            return L/0.52917721067 # Source: 2014 CODATA
 
     def GetTF(self,rs,D,pol):
         """ Fermi temperature """
